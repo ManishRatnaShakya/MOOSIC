@@ -83,34 +83,6 @@ def recommend():
     tracks = playlist['tracks']
     return jsonify(tracks)
 
-# def recommend():
-#     if request.method == 'POST':
-#         # Get user input
-#         token = get_token()
-#         headers = {
-#             'Authorization': f'Bearer {token}'
-#         }
-#         user_input = request.json
-#         track_id = user_input['track_id']
-
-#         # Extract features for the selected track
-#         track_features = data[data['id'] == track_id][[
-#             'acousticness', 'danceability', 'energy', 'instrumentalness',
-#             'key', 'liveness', 'loudness', 'mode', 'speechiness', 'tempo', 'valence'
-#         ]].iloc[0].values.reshape(1, -1)
-
-#         # Use the model to find nearest neighbors
-#         distances, indices = nn_model.kneighbors(track_features)
-
-#         # Retrieve recommended tracks
-#         recommended_tracks = data.iloc[indices[0]][['name', 'artists', 'id']].to_dict(orient='records')
-        
-#         ids_list = [song['id'] for song in recommended_tracks]
-#         ids = ','.join(ids_list)
-#         response = requests.get(f"https://api.spotify.com/v1/tracks?ids={ids}", headers=headers)
-#         playlist = response.json()  
-#         tracks = playlist['tracks']
-#         return jsonify(tracks)
 
 # Function to get token using Client Credentials Flow
 def get_token():
@@ -127,3 +99,5 @@ def get_token():
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
+
+
