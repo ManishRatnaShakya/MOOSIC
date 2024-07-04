@@ -1,9 +1,16 @@
 {
     "version": 2,
     "builds": [
-        {"src": "music_recommender.py", "use": "@vercel/python"}
+      {
+        "src": "music_recommender.py",
+        "use": "@vercel/python"
+      }
     ],
     "routes": [
-        {"src": "/(.*)", "dest": "music_recommender.py"}
+      {
+        "src": "/(.*)",
+        "dest": "music_recommender.py"
+      }
     ]
-}
+  }
+  
